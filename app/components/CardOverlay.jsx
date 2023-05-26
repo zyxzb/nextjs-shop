@@ -27,7 +27,6 @@ const CardOverlay = ({ product }) => {
       cost,
     };
     addItemToCart({ newItem });
-    toast.success(`Successfully added ${name} to your cart!`);
   };
 
   const handleSaveToFavorites = () => {

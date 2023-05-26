@@ -61,11 +61,12 @@ const useCart = create((set, get) => ({
 
   addItemToCart: (params) => {
     const { newItem } = params;
-    const { price_id } = newItem;
+    const { price_id, name } = newItem;
 
     set((state) => {
       // find if item already exists in the cart
       const tempItem = state.cart.find((i) => i.price_id === price_id);
+      toast.success(`Successfully added ${name} to your cart!`);
 
       // if item exists, decrease quantity
       if (tempItem) {

@@ -14,6 +14,14 @@ const Modal = () => {
 
   const router = useRouter();
 
+  // number of all items in the shopping cart
+  const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  // total price of all products
+  const totalPrice = cartItems.reduce(
+    (acc, item) => acc + item.cost * item.quantity,
+    0,
+  );
+
   const checkout = async () => {
     const lineItems = cartItems.map((cartItem) => {
       return {
@@ -69,6 +77,10 @@ const Modal = () => {
               </div>
             ))
           )}
+        </div>
+        <div className='flex justify-between items-center px-6 py-2 border-4 text-xl mt-4 font-bold'>
+          <p>{totalItems} Items</p>
+          <p>{totalPrice / 100}zł Total</p>
         </div>
         <div className='m-4 flex flex-col gap-4'>
           <button

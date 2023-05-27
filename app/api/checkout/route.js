@@ -15,6 +15,7 @@ export const POST = async (req) => {
       apiVersion: '2020-08-27',
     });
     const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card', 'blik', 'p24'],
       success_url: 'https://nextjs-shop-sooty.vercel.app/success',
       cancel_url: 'https://nextjs-shop-sooty.vercel.app/cancel',
       line_items: body.lineItems,

@@ -13,7 +13,7 @@ const ProductCard = ({ product }) => {
   } = product;
 
   const onProductClick = () => {
-    router.push(`/product?id=${price_id}`);
+    router.push(`/${price_id}`);
   };
 
   return (

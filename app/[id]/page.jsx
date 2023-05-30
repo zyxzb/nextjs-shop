@@ -16,7 +16,7 @@ const ProductPage = async ({ searchParams }) => {
 
   const singleProduct = await gesStripeSingleProduct();
 
-  return <ProductLayout singleProduct={singleProduct} data-superjson />;
+  return <ProductLayout singleProduct={singleProduct} />;
 };
 
 export default ProductPage;

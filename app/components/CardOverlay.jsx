@@ -6,7 +6,7 @@ import { AiOutlineHeart, AiOutlinePlusCircle } from 'react-icons/ai';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
 
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const CardOverlay = ({ product }) => {
@@ -16,8 +16,8 @@ const CardOverlay = ({ product }) => {
     product: { name, images },
   } = product;
 
-  const addItemToCart = useCart((state) => state.addItemToCart);
   const addToFavorite = useCart((state) => state.addToFavorite);
+  const addItemToCart = useCart((state) => state.addItemToCart);
 
   const handleAddItemToCart = () => {
     const newItem = {

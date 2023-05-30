@@ -1,7 +1,6 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import useCart from '../(store)/store';
 import CardOverlay from './CardOverlay';
 
 const ProductCard = ({ product }) => {
@@ -11,18 +10,9 @@ const ProductCard = ({ product }) => {
     unit_amount: cost,
     product: { images, name, description },
   } = product;
-  const setProduct = useCart((state) => state.setProduct);
 
   const onProductClick = () => {
-    const newProduct = {
-      name,
-      description,
-      price_id,
-      cost,
-      product,
-    };
-    setProduct({ newProduct });
-    router.push(`/product?price_id=${price_id}`);
+    router.push(`/product?id=${price_id}`);
   };
 
   return (

@@ -3,7 +3,6 @@ import { toast } from 'react-toastify';
 
 const useCart = create((set, get) => ({
   cart: [],
-  product: {},
   savedProducts: [],
   openModal: false,
 
@@ -45,16 +44,6 @@ const useCart = create((set, get) => ({
       return {
         ...state,
         openModal: !state.openModal,
-      };
-    });
-  },
-
-  setProduct: (params) => {
-    const { newProduct } = params;
-    set((state) => {
-      return {
-        ...state,
-        product: newProduct,
       };
     });
   },

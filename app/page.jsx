@@ -2,14 +2,14 @@ import Stripe from 'stripe';
 import ProductCard from './components/ProductCard';
 
 const gesStripeProducts = async () => {
-  const stripe = new Stripe(process.env.STRIPE_SECRET ?? '', {
+  const stripe = new Stripe(process.env.NEXT_SECRET_STRIPE ?? '', {
     apiVersion: '2020-08-27',
   });
   const response = await stripe.prices.list({
     expand: ['data.product'],
   });
-  const prices = response.data;
-  return prices;
+  const products = response.data;
+  return products;
 };
 
 const HomePage = async () => {

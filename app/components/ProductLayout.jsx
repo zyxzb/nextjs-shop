@@ -1,14 +1,16 @@
 'use client';
-
-import { useRouter } from 'next/navigation';
-import useCart from '../(store)/store';
+import React from 'react';
 import { ToastContainer } from 'react-toastify';
+import useCart from '../(store)/store';
 
-const ProductPage = () => {
-  const router = useRouter();
-  const specificProduct = useCart((state) => state.product);
+const ProductLayout = ({ singleProduct }) => {
+  const {
+    id: price_id,
+    unit_amount: cost,
+    product: { images, name, description },
+  } = singleProduct;
+
   const addItemToCart = useCart((state) => state.addItemToCart);
-  const { cost, description, name, price_id, product } = specificProduct;
 
   const handleAddItemToCart = () => {
     const newItem = {
@@ -20,21 +22,13 @@ const ProductPage = () => {
     addItemToCart({ newItem });
   };
 
-  if (!specificProduct?.name) {
-    // window.location.href = '/';
-    setTimeout(() => {
-      router.push('/');
-    }, 500);
-    return <div>Redirection go Home Page...</div>;
-  }
-
   return (
     <>
       <div className='flex flex-col'>
         <div className='w-full max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-2 md:p-4'>
           <div>
             <img
-              src={product.product.images[0]}
+              src={images[0]}
               alt={name}
               className='w-full h-full object-cover'
             />
@@ -60,4 +54,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default ProductLayout;

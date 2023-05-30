@@ -1,11 +1,9 @@
 'use client';
-import React from 'react';
 import { ToastContainer } from 'react-toastify';
 import useCart from '../(store)/store';
 import Image from 'next/image';
 
 const ProductLayout = ({ singleProduct }) => {
-  console.log(singleProduct);
   const {
     id: price_id,
     unit_amount: cost,

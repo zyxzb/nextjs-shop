@@ -14,7 +14,8 @@ const gesStripeSingleProduct = async () => {
 
 const ProductPage = async ({ searchParams }) => {
   const products = await gesStripeSingleProduct();
-  const singleProduct = products.find(({ id }) => id === searchParams.id);
+  // test
+  const singleProduct = products[0];
 
   return <ProductLayout singleProduct={singleProduct} />;
 };

@@ -2,12 +2,16 @@
 import React from 'react';
 import { ToastContainer } from 'react-toastify';
 import useCart from '../(store)/store';
+import Image from 'next/image';
 
-const ProductLayout = ({
-  id: price_id,
-  unit_amount: cost,
-  product: { images, name, description },
-}) => {
+const ProductLayout = ({ singleProduct }) => {
+  console.log(singleProduct);
+  const {
+    id: price_id,
+    unit_amount: cost,
+    product: { images, name, description },
+  } = singleProduct;
+
   const addItemToCart = useCart((state) => state.addItemToCart);
 
   const handleAddItemToCart = () => {
@@ -25,8 +29,11 @@ const ProductLayout = ({
       <div className='flex flex-col'>
         <div className='w-full max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-2 md:p-4'>
           <div>
-            <img
+            <Image
               src={images[0]}
+              width='0'
+              height='0'
+              sizes='100vw'
               alt={name}
               className='w-full h-full object-cover'
             />

@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import CardOverlay from './CardOverlay';
+import Image from 'next/image';
 
 const ProductCard = ({ product }) => {
   const router = useRouter();
@@ -20,7 +21,14 @@ const ProductCard = ({ product }) => {
       className='flex flex-col bg-white shadow hover:shadow-lg transition cursor-pointer relative group overflow-hidden rounded'
       onClick={onProductClick}
     >
-      <img src={images[0]} alt={name} className='w-full h-full object-cover' />
+      <Image
+        src={images[0]}
+        width='0'
+        height='0'
+        sizes='100vw'
+        alt={name}
+        className='w-full h-full object-cover'
+      />
       <div className='flex flex-col p-2'>
         <div className='flex justify-between w-full font-bold'>
           <h3>{name}</h3>

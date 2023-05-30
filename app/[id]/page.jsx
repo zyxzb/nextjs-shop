@@ -10,11 +10,11 @@ const ProductPage = async ({ searchParams }) => {
       expand: ['data.product'],
     });
     const products = response.data;
-    const singleProduct = products.find(({ id }) => id === searchParams.id);
-    return singleProduct;
+    return products;
   };
 
-  const singleProduct = await gesStripeSingleProduct();
+  const products = await gesStripeSingleProduct();
+  const singleProduct = products.find(({ id }) => id === searchParams.id);
 
   return <ProductLayout singleProduct={singleProduct} />;
 };

@@ -3,13 +3,11 @@ import React from 'react';
 import { ToastContainer } from 'react-toastify';
 import useCart from '../(store)/store';
 
-const ProductLayout = ({ singleProduct }) => {
-  const {
-    id: price_id,
-    unit_amount: cost,
-    product: { images, name, description },
-  } = singleProduct;
-
+const ProductLayout = ({
+  id: price_id,
+  unit_amount: cost,
+  product: { images, name, description },
+}) => {
   const addItemToCart = useCart((state) => state.addItemToCart);
 
   const handleAddItemToCart = () => {

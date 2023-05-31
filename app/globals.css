@@ -48,3 +48,6 @@
 .meat_gradient {
   @apply bg-gradient-to-r from-rose-100 via-pink-800 to-purple-100 bg-clip-text text-transparent text-3xl lg:text-5xl font-bold text-center p-10 lg:p-16;
 }
+.link_btn {
+  @apply bg-pink-700 text-white hover:bg-pink-500 transition cursor-pointer mr-auto mt-auto px-4 py-2;
+}

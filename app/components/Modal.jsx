@@ -11,6 +11,7 @@ const Modal = () => {
   const cartItems = useCart((state) => state.cart);
   const deleteAllFromCart = useCart((state) => state.emptyCart);
   const removeItem = useCart((state) => state.removeItemFromCart);
+  console.log(cartItems.length);
 
   const router = useRouter();
 
@@ -85,7 +86,8 @@ const Modal = () => {
         <div className='m-4 flex flex-col gap-4'>
           <button
             onClick={checkout}
-            className='border border-solid text-xl px-6 py-4 uppercase hover:bg-slate-200 transition'
+            className='border border-solid text-xl px-6 py-4 uppercase hover:bg-slate-200 transition disabled:cursor-not-allowed disabled:hover:bg-transparent'
+            disabled={cartItems.length ? false : true}
           >
             Checkout
           </button>

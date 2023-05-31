@@ -47,7 +47,7 @@ const ProductLayout = ({ singleProduct }) => {
             <button
               type='button'
               onClick={handleAddItemToCart}
-              className='bg-pink-700 text-white hover:bg-pink-500 transition cursor-pointer mr-auto mt-auto px-4 py-2'
+              className='link_btn'
             >
               Add To Cart
             </button>

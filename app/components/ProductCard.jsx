@@ -13,7 +13,7 @@ const ProductCard = ({ product }) => {
   } = product;
 
   const onProductClick = () => {
-    router.push(`/${price_id}`);
+    router.push(`/product/${price_id}`);
   };
 
   return (
@@ -34,7 +34,9 @@ const ProductCard = ({ product }) => {
           <h3>{name}</h3>
           <p>{cost / 100}zł</p>
         </div>
-        <p className='text-sm pt-4'>{description}</p>
+        <p className='text-sm pt-4'>
+          {description.substring(0, 80).trim().concat('...')}
+        </p>
       </div>
       <CardOverlay product={product} />
     </div>

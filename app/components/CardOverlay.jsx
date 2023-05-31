@@ -51,7 +51,7 @@ const CardOverlay = ({ product }) => {
                 handleSaveToFavorites();
               }}
             >
-              <AiOutlineHeart className='text-5xl hover:text-red-300 cursor-pointer' />
+              <AiOutlineHeart className='text-5xl hover:text-pink-700 cursor-pointer' />
             </button>
           </Tippy>
           <Tippy content='Add to Basket'>
@@ -62,7 +62,7 @@ const CardOverlay = ({ product }) => {
                 handleAddItemToCart();
               }}
             >
-              <AiOutlinePlusCircle className='text-5xl hover:text-red-300 cursor-pointer' />
+              <AiOutlinePlusCircle className='text-5xl hover:text-pink-700 cursor-pointer' />
             </button>
           </Tippy>
         </div>

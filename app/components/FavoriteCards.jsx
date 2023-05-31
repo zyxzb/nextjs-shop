@@ -4,7 +4,7 @@ import Link from 'next/link';
 import useCart from '../(store)/store';
 import Tippy from '@tippyjs/react';
 
-const FavoriteCard = () => {
+const FavoriteCards = () => {
   const favoriteItems = useCart((state) => state.savedProducts);
   const removeFromFavorite = useCart((state) => state.removeFromFavorite);
 
@@ -14,7 +14,7 @@ const FavoriteCard = () => {
         <p className='text-xl'>Add first Item</p>
         <Link
           href='/'
-          className='bg-slate-700 text-white hover:bg-slate-500 cursor-pointer px-4 py-2 mt-4'
+          className='bg-pink-700 text-white hover:bg-pink-500 transition cursor-pointer px-4 py-2 mt-4'
         >
           Home Page
         </Link>
@@ -57,4 +57,4 @@ const FavoriteCard = () => {
   );
 };
 
-export default FavoriteCard;
+export default FavoriteCards;

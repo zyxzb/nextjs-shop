@@ -2,6 +2,7 @@
 import { ToastContainer } from 'react-toastify';
 import useCart from '../(store)/store';
 import Image from 'next/image';
+import PageTitle from './PageTitle';
 
 const ProductLayout = ({ singleProduct }) => {
   const {
@@ -24,6 +25,7 @@ const ProductLayout = ({ singleProduct }) => {
 
   return (
     <>
+      <PageTitle title={`Produkt: ${name}`} />
       <div className='flex flex-col'>
         <div className='w-full max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-2 md:p-4'>
           <div>
@@ -45,7 +47,7 @@ const ProductLayout = ({ singleProduct }) => {
             <button
               type='button'
               onClick={handleAddItemToCart}
-              className='bg-slate-700 text-white hover:bg-slate-500 cursor-pointer mr-auto mt-auto px-4 py-2'
+              className='bg-pink-700 text-white hover:bg-pink-500 transition cursor-pointer mr-auto mt-auto px-4 py-2'
             >
               Add To Cart
             </button>

@@ -12,8 +12,20 @@ const gesStripeProducts = async () => {
   return products;
 };
 
-const AllProducts = async () => {
+const AllProducts = async ({ numberOfProducts }) => {
   const products = await gesStripeProducts();
+
+  if (numberOfProducts !== undefined) {
+    const newProducts = products.slice(0, numberOfProducts);
+
+    return (
+      <div className='w-full max-w-[1000px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
+        {newProducts.map((product, index) => (
+          <ProductCard key={index} product={product} />
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className='w-full max-w-[1000px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>

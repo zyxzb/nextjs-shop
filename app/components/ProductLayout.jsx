@@ -27,18 +27,18 @@ const ProductLayout = ({ singleProduct }) => {
     <>
       <PageTitle title={`Produkt: ${name}`} />
       <div className='flex flex-col'>
-        <div className='w-full max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-2 md:p-4'>
-          <div>
+        <div className='w-full max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-2 md:p-4 gap-6'>
+          <div className='h-[240px] md:h-[360px]'>
             <Image
               src={images[0]}
-              width='0'
-              height='0'
+              width={200}
+              height={200}
               sizes='100vw'
               alt={name}
               className='w-full h-full object-cover'
             />
           </div>
-          <div className='flex flex-col gap-2 p-4'>
+          <div className='flex flex-col gap-2'>
             <div className='flex justify-between font-bold flex-col items-start md:text-lg'>
               <h3>{name}</h3>
               <p>{cost / 100}zł</p>

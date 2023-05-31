@@ -16,7 +16,7 @@ const RootLayout = ({ children }) => {
         className={`min-h-screen flex flex-col relative ${inter.className}`}
       >
         <Header />
-        <div className='flex-1 p-4'>{children}</div>
+        <div className='flex-1 px-4 py-10'>{children}</div>
         <Footer />
         <div id='portal' />
       </body>

@@ -18,17 +18,19 @@ const ProductCard = ({ product }) => {
 
   return (
     <div
-      className='flex flex-col bg-white shadow hover:shadow-lg transition cursor-pointer relative group overflow-hidden rounded'
+      className='flex flex-col bg-white shadow hover:shadow-lg transition cursor-pointer relative group overflow-hidden rounded h-[340px]'
       onClick={onProductClick}
     >
-      <Image
-        src={images[0]}
-        width='0'
-        height='0'
-        sizes='100vw'
-        alt={name}
-        className='w-full h-full object-cover'
-      />
+      <div className='h-[70%] max-h-[70%]'>
+        <Image
+          src={images[0]}
+          width={200}
+          height={200}
+          sizes='100vw'
+          alt={name}
+          className='w-full h-full object-cover'
+        />
+      </div>
       <div className='flex flex-col p-2'>
         <div className='flex justify-between w-full font-bold'>
           <h3>{name}</h3>
